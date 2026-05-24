@@ -100,10 +100,6 @@ shadowJar.dependsOn javadocJar
 shadowJar.dependsOn sourcesJar
 shadowJar.dependsOn jar
 
-components.java.withVariantsFromConfiguration(configurations.shadowRuntimeElements) {
-    skip()
-}
-
 // UTF-8
 tasks.withType(JavaCompile) {
     options.encoding = 'UTF-8'
