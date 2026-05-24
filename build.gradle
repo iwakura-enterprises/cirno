@@ -2,7 +2,6 @@ plugins {
     id 'java'
     id 'signing'
     id 'maven-publish'
-    id("com.gradleup.shadow") version "9.4.1"
     id 'jacoco'
     id 'jacoco-report-aggregation'
     id "tech.medivh.plugin.publisher" version "1.2.3"
@@ -32,9 +31,6 @@ task publishCloseAndRelease() {
     dependsOn 'cleanBuildMedivhMavenRepo'
     dependsOn 'uploadToSonatype'
     dependsOn 'publishDeployment'
-}
-
-shadowJar {
 }
 
 test {
@@ -95,10 +91,6 @@ java {
     withJavadocJar()
     withSourcesJar()
 }
-
-shadowJar.dependsOn javadocJar
-shadowJar.dependsOn sourcesJar
-shadowJar.dependsOn jar
 
 // UTF-8
 tasks.withType(JavaCompile) {
