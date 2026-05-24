@@ -38,7 +38,7 @@ jobs:
         env:
           ORG_GRADLE_PROJECT_sonatypeUsername: ${{ secrets.SONATYPEUSERNAME }}
           ORG_GRADLE_PROJECT_sonatypePassword: ${{ secrets.SONATYPEPASSWORD }}
-        run: ./gradlew shadowJar
+        run: ./gradlew jar
       - name: Release
         uses: softprops/action-gh-release@v1
         with:
