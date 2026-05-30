@@ -8,13 +8,19 @@ plugins {
 }
 
 group = 'enterprises.iwakura'
-version = '1.0.0'
+version = '1.0.1'
 
 repositories {
     mavenCentral()
 }
 
 dependencies {
+    // SemVer
+    compileOnly 'com.github.zafarkhaja:java-semver:0.10.2'
+
+    // Gson
+    compileOnly 'com.google.code.gson:gson:2.14.0'
+
     // Lombok
     compileOnly 'org.projectlombok:lombok:1.18.38'
     annotationProcessor 'org.projectlombok:lombok:1.18.38'
